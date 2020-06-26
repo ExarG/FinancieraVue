@@ -1,18 +1,18 @@
 <template>
     <div>
-        <h3 class="text-center">Edit Book</h3>
+        <h3 class="text-center">Edit Client</h3>
         <div class="row">
             <div class="col-md-6">
-                <form @submit.prevent="updateBook">
+                <form @submit.prevent="updateClient">
                     <div class="form-group">
                         <label>Name</label>
-                        <input type="text" class="form-control" v-model="book.name">
+                        <input type="text" class="form-control" v-model="client.name">
                     </div>
                     <div class="form-group">
-                        <label>Author</label>
-                        <input type="text" class="form-control" v-model="book.author">
+                        <label>Phone</label>
+                        <input type="text" class="form-control" v-model="client.phone">
                     </div>
-                    <button type="submit" class="btn btn-primary">Update Book</button>
+                    <button type="submit" class="btn btn-primary">Update Client</button>
                 </form>
             </div>
         </div>
@@ -23,21 +23,21 @@
     export default {
         data() {
             return {
-                book: {}
+                client: {}
             }
         },
         created() {
             this.axios
-                .get(`http://localhost:8000/api/book/edit/${this.$route.params.id}`)
+                .get(`http://localhost:8000/api/client/edit/${this.$route.params.id}`)
                 .then((response) => {
-                    this.book = response.data;
+                    this.client = response.data;
                     // console.log(response.data);
                 });
         },
         methods: {
-            updateBook() {
+            updateClient() {
                 this.axios
-                    .post(`http://localhost:8000/api/book/update/${this.$route.params.id}`, this.book)
+                    .post(`http://localhost:8000/api/client/update/${this.$route.params.id}`, this.client)
                     .then((response) => {
                         this.$router.push({name: 'home'});
                     });

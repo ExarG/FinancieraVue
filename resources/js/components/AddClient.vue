@@ -1,18 +1,18 @@
 <template>
     <div>
-        <h3 class="text-center">Add Book</h3>
+        <h3 class="text-center">Add Client</h3>
         <div class="row">
             <div class="col-md-6">
-                <form @submit.prevent="addBook">
+                <form @submit.prevent="addClient">
                     <div class="form-group">
                         <label>Name</label>
-                        <input type="text" class="form-control" v-model="book.name">
+                        <input type="text" class="form-control" v-model="client.name">
                     </div>
                     <div class="form-group">
-                        <label>Author</label>
-                        <input type="text" class="form-control" v-model="book.author">
+                        <label>Phone</label>
+                        <input type="text" class="form-control" v-model="client.phone">
                     </div>
-                    <button type="submit" class="btn btn-primary">Add Book</button>
+                    <button type="submit" class="btn btn-primary">Add Client</button>
                 </form>
             </div>
         </div>
@@ -23,14 +23,14 @@
     export default {
         data() {
             return {
-                book: {}
+                client: {}
             }
         },
         methods: {
-            addBook() {
+            addClient() {
 
                 this.axios
-                    .post('http://localhost:8000/api/book/add', this.book)
+                    .post('http://localhost:8000/api/client/add', this.client)
                     .then(response => (
                         this.$router.push({name: 'home'})
                         // console.log(response.data)

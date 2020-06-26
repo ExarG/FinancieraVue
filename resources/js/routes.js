@@ -1,21 +1,59 @@
-import AllBooks from './components/AllBooks.vue';
-import AddBook from './components/AddBook.vue';
-import EditBook from './components/EditBook.vue';
+import AllClients from './components/AllClients.vue';
+import AddClient from './components/AddClient.vue';
+import EditClient from './components/EditClient.vue';
+
+import AllLoans from './components/AllLoans.vue';
+import AddLoan from './components/AddLoan.vue';
+import EditLoan from './components/EditLoan.vue';
+
+import AllPays from './components/AllPays.vue';
+import AddPay from './components/AddPay.vue';
+import EditPay from './components/EditPay.vue';
 
 export const routes = [
     {
         name: 'home',
         path: '/',
-        component: AllBooks
+        component: AllClients
     },
     {
         name: 'add',
         path: '/add',
-        component: AddBook
+        component: AddClient
     },
     {
         name: 'edit',
         path: '/edit/:id',
-        component: EditBook
+        component: EditClient
+    },
+    {
+        name: 'loans',
+        path: '/loans',
+        component: AllLoans
+    },
+    {
+        name: 'addl',
+        path: '/addl',
+        component: AddLoan
+    },
+    {
+        name: 'editl',
+        path: '/editl/:id',
+        component: EditLoan
+    },
+    {
+        name: 'pays',
+        path: '/pays',
+        component: AllPays
+    },
+    {
+        name: 'addp',
+        path: '/addp',
+        component: AddPay
+    },
+    {
+        name: 'editp',
+        path: '/editp/:id',
+        component: EditPay
     }
 ];
